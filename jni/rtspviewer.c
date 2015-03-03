@@ -23,6 +23,7 @@
  */
 #include <gst/video/video.h>
 #include <gst/video/videooverlay.h>
+#include <gio/gio.h>
 #include <android/native_window.h>
 #include <android/native_window_jni.h>
 
@@ -212,6 +213,7 @@ need_data_cb (GstElement *playbin, GstElement *rtspsrc, gpointer user_data)
 
   g_object_set (G_OBJECT (rtspsrc), "user-id", priv->user, NULL);
   g_object_set (G_OBJECT (rtspsrc), "user-pw", priv->pass, NULL);
+  g_object_set (G_OBJECT (rtspsrc), "tls-validation-flags", G_TLS_CERTIFICATE_GENERIC_ERROR, NULL);
 }
 
 static GstElement *

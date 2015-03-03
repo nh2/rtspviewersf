@@ -269,8 +269,7 @@ public class ConfigurationManager extends ListActivity {
                 String user = userv.getText().toString();
                 String pass = passv.getText().toString();
 
-                if (!uri.isEmpty() && (uri.startsWith("rtsp://") ||
-                        uri.startsWith("rtspt://") || uri.startsWith("rtsph://"))) {
+                if (!uri.isEmpty()) {
                     if (selected_position == -1) {
                         HashMap<String, String> item = new HashMap<String, String>();
                         item.put("uri", uri);
